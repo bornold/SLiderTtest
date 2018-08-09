@@ -1,14 +1,36 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
-             xmlns:local="clr-namespace:SLiderTtest"
              x:Class="SLiderTtest.MainPage">
-
-    <StackLayout>
-        <!-- Place new controls here -->
-    	<Label Text="Welcome to Xamarin.Forms!" 
-           HorizontalOptions="Center"
-           VerticalOptions="CenterAndExpand" />
+    <StackLayout HorizontalOptions="FillAndExpand">
+        <Label Text="{Binding Val, StringFormat='Value {0:F0}'}"/>
+        <Slider
+            x:Name="slider"
+            HorizontalOptions="FillAndExpand"/>
+        <Label Text="{Binding Min, StringFormat='Min {0:F0}'}" />
+        <Slider
+            HorizontalOptions="FillAndExpand"
+            Value="{Binding Min}"
+            Maximum="49"
+            Minimum="0"
+            />
+        <Label Text="{Binding Max, StringFormat='Max {0:F0}'}" />
+        <Slider
+            HorizontalOptions="FillAndExpand"
+            Value="{Binding Max}"
+            Maximum="200"
+            Minimum="51"
+            />
+        <Label Text="{Binding Val2, StringFormat='Val2 {0:F0}'}" />
+        <Slider
+            HorizontalOptions="FillAndExpand"
+            Value="{Binding Val2}" 
+            Maximum="210"
+            Minimum="-10"
+            />
+        <Button
+            Text="Set Val to Val2"
+            Command="{Binding DoCommand}"
+            HorizontalOptions="FillAndExpand"/>
     </StackLayout>
-
 </ContentPage>
